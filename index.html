@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraGlow Aesthetic Clinic — Kulit Sehat, Cerah & Bercahaya</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Cormorant Garamond untuk sentuhan aesthetic mewah -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        pastelPink: '#FFD1DC',
+                        deepPink: '#FF8FA3',
+                        pastelBlue: '#BDE0FE',
+                        deepBlue: '#72B5F8',
+                        pearl: '#FDFBFD',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Pengaturan Dasar & Latar Belakang Gradien Lembut */
+        body {
+            background: linear-gradient(135deg, #FFF5F8 0%, #F4F9FF 50%, #FFF0F5 100%);
+            color: #334155;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animasi Liquid Blobs di Latar Belakang */
+        .liquid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.75;
+            animation: liquidMove 18s infinite alternate ease-in-out;
+        }
+
+        .blob-1 {
+            width: 45vw;
+            height: 45vw;
+            max-width: 550px;
+            max-height: 550px;
+            background: radial-gradient(circle, #FFD1DC 0%, #FFB7C5 100%);
+            top: -10%;
+            left: -10%;
+            animation-duration: 16s;
+        }
+
+        .blob-2 {
+            width: 50vw;
+            height: 50vw;
+            max-width: 600px;
+            max-height: 600px;
+            background: radial-gradient(circle, #BDE0FE 0%, #A2D2FF 100%);
+            bottom: -15%;
+            right: -10%;
+            animation-duration: 20s;
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            width: 35vw;
+            height: 35vw;
+            max-width: 420px;
+            max-height: 420px;
+            background: radial-gradient(circle, #E2D1F9 0%, #FFD1DC 100%);
+            top: 40%;
+            left: 35%;
+            animation-duration: 22s;
+            animation-delay: -9s;
+        }
+
+        @keyframes liquidMove {
+            0% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+                border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
+            }
+            50% {
+                transform: translate(60px, 40px) scale(1.1) rotate(45deg);
+                border-radius: 60% 40% 45% 55% / 40% 60% 45% 55%;
+            }
+            100% {
+                transform: translate(-40px, 70px) scale(0.95) rotate(90deg);
+                border-radius: 50% 50% 40% 60% / 60% 40% 50% 50%;
+            }
+        }
+
+        /* Efek Liquid Glass (Glassmorphism Utama) */
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.48);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1.5px solid rgba(255, 255, 255, 0.75);
+            box-shadow: 
+                0 10px 35px -5px rgba(162, 210, 255, 0.2),
+                0 8px 20px -6px rgba(255, 183, 197, 0.25),
+                inset 0 1px 1px rgba(255, 255, 255, 0.9);
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .liquid-glass:hover {
+            background: rgba(255, 255, 255, 0.62);
+            border-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 
+                0 20px 40px -10px rgba(162, 210, 255, 0.35),
+                0 12px 25px -8px rgba(255, 183, 197, 0.35),
+                inset 0 1px 2px rgba(255, 255, 255, 1);
+        }
+
+        /* Glass Navbar */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 30px rgba(189, 224, 254, 0.15);
+        }
+
+        /* Tombol Gradien Pastel Lucu */
+        .btn-pastel {
+            background: linear-gradient(135deg, #FF9EBB 0%, #8EC5FC 100%);
+            color: white;
+            box-shadow: 0 8px 20px -4px rgba(255, 158, 187, 0.5);
+            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .btn-pastel:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 25px -4px rgba(142, 197, 252, 0.6);
+            filter: brightness(1.04);
+        }
+
+        .btn-pastel:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        /* Animasi Melayang (Floating) */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-float {
+            animation: floatSlow 4.5s ease-in-out infinite;
+        }
+
+        .animate-float-delay {
+            animation: floatSlow 5.5s ease-in-out 1.5s infinite;
+        }
+
+        /* Animasi Reveal saat Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Kustomisasi Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF5F8;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #FFB7C5, #A2D2FF);
+            border-radius: 99px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-pink-200 selection:text-slate-800">
+
+    <!-- Latar Belakang Liquid Blobs Animasi -->
+    <div class="liquid-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- 1. NAVBAR GLASSMORPHISM -->
+    <header class="glass-nav sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Klinik -->
+                <a href="#beranda" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-300 to-sky-300 flex items-center justify-center text-white shadow-md group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fa-solid fa-sparkles text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-2xl font-bold tracking-tight bg-gradient-to-r from-pink-500 to-sky-500 bg-clip-text text-transparent">
+                            AuraGlow
+                        </span>
+                        <span class="block text-[10px] uppercase tracking-[0.2em] text-slate-400 font-semibold -mt-1">
+                            Aesthetic Clinic
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#beranda" class="hover:text-pink-500 transition-colors">Beranda</a>
+                    <a href="#galeri" class="hover:text-sky-500 transition-colors">Galeri Klinik</a>
+                    <a href="#layanan" class="hover:text-pink-500 transition-colors">Layanan</a>
+                    <a href="#testimoni" class="hover:text-sky-500 transition-colors">Testimoni</a>
+                    <a href="#reservasi" class="hover:text-pink-500 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Tombol CTA & Mobile Menu Toggle -->
+                <div class="flex items-center gap-3">
+                    <a href="#reservasi" class="btn-pastel px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>Booking Sekarang</span>
+                    </a>
+                    <button id="mobile-menu-btn" aria-label="Buka Menu" class="md:hidden w-10 h-10 rounded-xl liquid-glass flex items-center justify-center text-slate-600">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-5 pt-2 space-y-2 border-t border-white/60 bg-white/70 backdrop-blur-xl">
+            <a href="#beranda" class="block px-4 py-2.5 rounded-xl hover:bg-pink-50/80 text-slate-700 font-medium">Beranda</a>
+            <a href="#galeri" class="block px-4 py-2.5 rounded-xl hover:bg-sky-50/80 text-slate-700 font-medium">Galeri Klinik</a>
+            <a href="#layanan" class="block px-4 py-2.5 rounded-xl hover:bg-pink-50/80 text-slate-700 font-medium">Layanan Perawatan</a>
+            <a href="#testimoni" class="block px-4 py-2.5 rounded-xl hover:bg-sky-50/80 text-slate-700 font-medium">Testimoni</a>
+            <a href="#reservasi" class="block px-4 py-2.5 rounded-xl hover:bg-pink-50/80 text-slate-700 font-medium">Reservasi & Kontak</a>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="beranda" class="pt-12 pb-20 lg:pt-20 lg:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Kolom Kiri: Copywriting -->
+            <div class="lg:col-span-6 space-y-6 text-center lg:text-left reveal active">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-xs font-semibold text-pink-500">
+                    <span class="w-2 h-2 rounded-full bg-pink-400 animate-ping"></span>
+                    <span>Perawatan Kulit Modern & Terpercaya</span>
+                </div>
+
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 leading-[1.15]">
+                    Pancarkan Pesona <br>
+                    <span class="bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent italic">
+                        Glass Skin Alami
+                    </span>
+                    Setiap Hari
+                </h1>
+
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    Nikmati pengalaman perawatan estetika lembut berteknologi tinggi dalam suasana menenangkan. Ditangani langsung oleh dokter kulit bersertifikat untuk hasil cerah, kenyal, dan sehat bercahaya.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#layanan" class="btn-pastel w-full sm:w-auto px-7 py-3.5 rounded-full font-semibold text-sm flex items-center justify-center gap-2">
+                        <span>Eksplorasi Perawatan</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#galeri" class="liquid-glass w-full sm:w-auto px-7 py-3.5 rounded-full font-semibold text-sm text-slate-700 hover:text-sky-600 flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-images text-sky-400"></i>
+                        <span>Lihat Suasana Klinik</span>
+                    </a>
+                </div>
+
+                <!-- Statistik Mini Glass -->
+                <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-6 max-w-lg mx-auto lg:mx-0">
+                    <div class="liquid-glass p-3.5 rounded-2xl text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-pink-500">12K+</div>
+                        <div class="text-[11px] sm:text-xs text-slate-500 font-medium">Klien Bahagia</div>
+                    </div>
+                    <div class="liquid-glass p-3.5 rounded-2xl text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-sky-500">4.9/5</div>
+                        <div class="text-[11px] sm:text-xs text-slate-500 font-medium">Rating Ulasan</div>
+                    </div>
+                    <div class="liquid-glass p-3.5 rounded-2xl text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-purple-400">100%</div>
+                        <div class="text-[11px] sm:text-xs text-slate-500 font-medium">BPOM & Aman</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Visual Hero dengan Kartu Melayang -->
+            <div class="lg:col-span-6 relative reveal active">
+                <div class="relative mx-auto max-w-md lg:max-w-full">
+                    <!-- Bingkai Kaca Utama -->
+                    <div class="liquid-glass p-3 sm:p-4 rounded-[2.2rem] relative z-10">
+                        <img 
+                            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80" 
+                            alt="Perawatan Wajah Aesthetic di AuraGlow" 
+                            onerror="this.src='https://placehold.co/800x900/FFD1DC/334155?text=AuraGlow+Clinic'"
+                            class="w-full h-[380px] sm:h-[460px] object-cover rounded-[1.7rem] shadow-inner"
+                        >
+                    </div>
+
+                    <!-- Kartu Kaca Melayang 1 (Kiri Atas) -->
+                    <div class="liquid-glass px-4 py-3 rounded-2xl absolute -top-5 -left-3 sm:-left-6 z-20 flex items-center gap-3 animate-float">
+                        <div class="w-10 h-10 rounded-xl bg-pink-100 text-pink-500 flex items-center justify-center">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-800">Hydra Glass Glow</p>
+                            <p class="text-[11px] text-slate-500">Hidrasi Ekstra 72 Jam</p>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Kaca Melayang 2 (Kanan Bawah) -->
+                    <div class="liquid-glass px-4 py-3 rounded-2xl absolute -bottom-5 -right-3 sm:-right-6 z-20 flex items-center gap-3 animate-float-delay">
+                        <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-500 flex items-center justify-center">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-800">Konsultasi Dokter</p>
+                            <p class="text-[11px] text-slate-500">Analisis Kulit AI Gratis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. PHOTO SLIDER / CAROUSEL KLINIK KECANTIKAN -->
+    <section id="galeri" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="text-xs font-bold uppercase tracking-widest text-sky-500 bg-sky-100/70 px-3.5 py-1.5 rounded-full">
+                Tur Virtual Klinik
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 mt-3">
+                Ruang Nyaman & Teknologi Modern
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2">
+                Intip suasana ruang perawatan privat, rangkaian skincare premium, serta perangkat estetika berstandar medis internasional kami.
+            </p>
+        </div>
+
+        <!-- Container Slider Glassmorphism -->
+        <div id="clinic-carousel" class="liquid-glass p-3 sm:p-5 rounded-[2.2rem] relative overflow-hidden group">
+            <div class="relative h-[340px] sm:h-[460px] md:h-[520px] rounded-[1.6rem] overflow-hidden">
+                <!-- Track Slides -->
+                <div id="slider-track" class="flex h-full transition-transform duration-700 ease-out">
+                    
+                    <!-- Slide 1 -->
+                    <div class="min-w-full h-full relative">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=80" 
+                             alt="Ruang Perawatan VIP Aesthetic" 
+                             onerror="this.src='https://placehold.co/1200x600/BDE0FE/334155?text=Ruang+Perawatan+VIP'"
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/65 via-slate-900/15 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 max-w-xl liquid-glass p-5 rounded-2xl">
+                            <span class="inline-block px-3 py-1 rounded-full bg-pink-400/90 text-white text-[11px] font-semibold mb-2">
+                                Fasilitas Privat
+                            </span>
+                            <h3 class="text-lg sm:text-2xl font-bold text-slate-800">Ruang Perawatan Pastel Suite</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                                Dirancang khusus dengan aromaterapi menenangkan dan privasi penuh agar Anda merasa rileks selama sesi perawatan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="min-w-full h-full relative">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1400&q=80" 
+                             alt="Facial & Hydrating Treatment" 
+                             onerror="this.src='https://placehold.co/1200x600/FFD1DC/334155?text=Facial+Treatment'"
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/65 via-slate-900/15 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 max-w-xl liquid-glass p-5 rounded-2xl">
+                            <span class="inline-block px-3 py-1 rounded-full bg-sky-400/90 text-white text-[11px] font-semibold mb-2">
+                                Perawatan Unggulan
+                            </span>
+                            <h3 class="text-lg sm:text-2xl font-bold text-slate-800">Signature Hydra-Infusion Facial</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                                Kombinasi serum hyaluronic acid murni dan pijat limfatik wajah untuk mengembalikan kelembapan instan tanpa rasa sakit.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="min-w-full h-full relative">
+                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1400&q=80" 
+                             alt="Rangkaian Produk Skincare Dermatologis" 
+                             onerror="this.src='https://placehold.co/1200x600/E2D1F9/334155?text=Skincare+Premium'"
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/65 via-slate-900/15 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 max-w-xl liquid-glass p-5 rounded-2xl">
+                            <span class="inline-block px-3 py-1 rounded-full bg-pink-400/90 text-white text-[11px] font-semibold mb-2">
+                                Formulasi Lembut
+                            </span>
+                            <h3 class="text-lg sm:text-2xl font-bold text-slate-800">Rangkaian Skincare Racikan Dokter</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                                Bebas alkohol keras dan paraben, aman untuk kulit sensitif, ibu hamil, maupun remaja yang ingin kulit sehat terawat.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="min-w-full h-full relative">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1400&q=80" 
+                             alt="Konsultasi Dokter Kulit & Skin Analyzer" 
+                             onerror="this.src='https://placehold.co/1200x600/BDE0FE/334155?text=Konsultasi+Dokter'"
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/65 via-slate-900/15 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 max-w-xl liquid-glass p-5 rounded-2xl">
+                            <span class="inline-block px-3 py-1 rounded-full bg-sky-400/90 text-white text-[11px] font-semibold mb-2">
+                                Diagnosis Akurat
+                            </span>
+                            <h3 class="text-lg sm:text-2xl font-bold text-slate-800">Konsultasi Personal & 3D Skin Check</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                                Dokter estetika kami menganalisis lapisan kulit secara mendalam sebelum merekomendasikan solusi terbaik untuk Anda.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Tombol Navigasi Prev & Next -->
+                <button id="prev-slide" aria-label="Slide Sebelumnya" class="liquid-glass w-11 h-11 rounded-full flex items-center justify-center text-slate-700 hover:text-pink-500 absolute top-1/2 -translate-y-1/2 left-4 z-20 transition-transform hover:scale-110">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="next-slide" aria-label="Slide Berikutnya" class="liquid-glass w-11 h-11 rounded-full flex items-center justify-center text-slate-700 hover:text-sky-500 absolute top-1/2 -translate-y-1/2 right-4 z-20 transition-transform hover:scale-110">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Indikator Dots & Status Autoplay -->
+            <div class="flex items-center justify-between px-3 pt-4">
+                <div id="slider-dots" class="flex items-center gap-2">
+                    <!-- Dots dirender via JavaScript -->
+                </div>
+                <span class="text-xs text-slate-400 hidden sm:inline-flex items-center gap-1.5">
+                    <i class="fa-regular fa-hand-pointer text-pink-400"></i> Arahkan kursor untuk menjeda slide
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. LAYANAN PERAWATAN (TREATMENT CARDS + FILTER) -->
+    <section id="layanan" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-pink-500 bg-pink-100/70 px-3.5 py-1.5 rounded-full">
+                    Menu Perawatan
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 mt-3">
+                    Perawatan Favorit Pilihan Klien
+                </h2>
+            </div>
+
+            <!-- Filter Kategori -->
+            <div class="flex flex-wrap gap-2" id="category-filters">
+                <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-gradient-to-r from-pink-400 to-sky-400 text-white shadow-sm">
+                    Semua Layanan
+                </button>
+                <button data-filter="facial" class="filter-btn liquid-glass px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-slate-600 hover:text-pink-500">
+                    Facial & Glow
+                </button>
+                <button data-filter="laser" class="filter-btn liquid-glass px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-slate-600 hover:text-sky-500">
+                    Laser & Light
+                </button>
+                <button data-filter="skincare" class="filter-btn liquid-glass px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-slate-600 hover:text-pink-500">
+                    Peeling & Booster
+                </button>
+            </div>
+        </div>
+
+        <!-- Grid Kartu Layanan -->
+        <div id="treatments-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Card 1 -->
+            <div class="treatment-card liquid-glass rounded-[1.8rem] p-6 flex flex-col justify-between hover:-translate-y-2" data-category="facial">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-200 to-pink-100 text-pink-500 flex items-center justify-center text-xl shadow-inner">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-white/80 text-xs font-semibold text-slate-500">
+                            <i class="fa-regular fa-clock mr-1 text-pink-400"></i>60 Menit
+                        </span>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-pink-400">Facial & Glow</span>
+                    <h3 class="text-xl font-bold text-slate-800 mt-1">Hydra Glass Facial</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        Pembersihan pori mendalam dengan teknologi vakum air lembut serta infusi serum peptida untuk efek wajah bening bercahaya.
+                    </p>
+                </div>
+                <div class="pt-6 mt-6 border-t border-white/60 flex items-center justify-between">
+                    <div>
+                        <span class="text-[11px] text-slate-400 block">Mulai dari</span>
+                        <span class="text-lg font-bold text-slate-800">Rp 350.000</span>
+                    </div>
+                    <button onclick="selectTreatment('Hydra Glass Facial')" class="btn-pastel px-4 py-2 rounded-full text-xs font-semibold">
+                        Pilih Paket
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="treatment-card liquid-glass rounded-[1.8rem] p-6 flex flex-col justify-between hover:-translate-y-2" data-category="laser">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-200 to-sky-100 text-sky-500 flex items-center justify-center text-xl shadow-inner">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-white/80 text-xs font-semibold text-slate-500">
+                            <i class="fa-regular fa-clock mr-1 text-sky-400"></i>45 Menit
+                        </span>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-sky-400">Laser & Light</span>
+                    <h3 class="text-xl font-bold text-slate-800 mt-1">Pink Laser Rejuvenation</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        Laser lembut tanpa downtime untuk meratakan warna kulit, menyamarkan noda hitam, dan merangsang kolagen alami.
+                    </p>
+                </div>
+                <div class="pt-6 mt-6 border-t border-white/60 flex items-center justify-between">
+                    <div>
+                        <span class="text-[11px] text-slate-400 block">Mulai dari</span>
+                        <span class="text-lg font-bold text-slate-800">Rp 650.000</span>
+                    </div>
+                    <button onclick="selectTreatment('Pink Laser Rejuvenation')" class="btn-pastel px-4 py-2 rounded-full text-xs font-semibold">
+                        Pilih Paket
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="treatment-card liquid-glass rounded-[1.8rem] p-6 flex flex-col justify-between hover:-translate-y-2" data-category="laser">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-200 to-indigo-100 text-indigo-500 flex items-center justify-center text-xl shadow-inner">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-white/80 text-xs font-semibold text-slate-500">
+                            <i class="fa-regular fa-clock mr-1 text-sky-400"></i>50 Menit
+                        </span>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-sky-400">Laser & Light</span>
+                    <h3 class="text-xl font-bold text-slate-800 mt-1">Blue Light Acne Therapy</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        Terapi sinar biru menenangkan peradangan jerawat aktif, mengontrol minyak berlebih, dan mempercepat pemulihan kulit.
+                    </p>
+                </div>
+                <div class="pt-6 mt-6 border-t border-white/60 flex items-center justify-between">
+                    <div>
+                        <span class="text-[11px] text-slate-400 block">Mulai dari</span>
+                        <span class="text-lg font-bold text-slate-800">Rp 420.000</span>
+                    </div>
+                    <button onclick="selectTreatment('Blue Light Acne Therapy')" class="btn-pastel px-4 py-2 rounded-full text-xs font-semibold">
+                        Pilih Paket
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="treatment-card liquid-glass rounded-[1.8rem] p-6 flex flex-col justify-between hover:-translate-y-2" data-category="skincare">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-200 to-sky-100 text-pink-500 flex items-center justify-center text-xl shadow-inner">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-white/80 text-xs font-semibold text-slate-500">
+                            <i class="fa-regular fa-clock mr-1 text-pink-400"></i>40 Menit
+                        </span>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-pink-400">Peeling & Booster</span>
+                    <h3 class="text-xl font-bold text-slate-800 mt-1">Aqua Peel & Glow</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        Eksfoliasi lembut berbahan ekstrak buah alami untuk mengangkat sel kulit mati tanpa pengelupasan kasar atau iritasi.
+                    </p>
+                </div>
+                <div class="pt-6 mt-6 border-t border-white/60 flex items-center justify-between">
+                    <div>
+                        <span class="text-[11px] text-slate-400 block">Mulai dari</span>
+                        <span class="text-lg font-bold text-slate-800">Rp 390.000</span>
+                    </div>
+                    <button onclick="selectTreatment('Aqua Peel & Glow')" class="btn-pastel px-4 py-2 rounded-full text-xs font-semibold">
+                        Pilih Paket
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="treatment-card liquid-glass rounded-[1.8rem] p-6 flex flex-col justify-between hover:-translate-y-2" data-category="skincare">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-200 to-pink-100 text-purple-500 flex items-center justify-center text-xl shadow-inner">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-white/80 text-xs font-semibold text-slate-500">
+                            <i class="fa-regular fa-clock mr-1 text-purple-400"></i>60 Menit
+                        </span>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-purple-400">Peeling & Booster</span>
+                    <h3 class="text-xl font-bold text-slate-800 mt-1">Salmon DNA Skin Booster</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        Nutrisi intensif untuk memperbaiki skin barrier yang rusak, menghaluskan tekstur kulit, dan menjaga elastisitas optimal.
+                    </p>
+                </div>
+                <div class="pt-6 mt-6 border-t border-white/60 flex items-center justify-between">
+                    <div>
+                        <span class="text-[11px] text-slate-400 block">Mulai dari</span>
+                        <span class="text-lg font-bold text-slate-800">Rp 1.250.000</span>
+                    </div>
+                    <button onclick="selectTreatment('Salmon DNA Skin Booster')" class="btn-pastel px-4 py-2 rounded-full text-xs font-semibold">
+                        Pilih Paket
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="treatment-card liquid-glass rounded-[1.8rem] p-6 flex flex-col justify-between hover:-translate-y-2" data-category="facial">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-200 to-pink-100 text-sky-500 flex items-center justify-center text-xl shadow-inner">
+                            <i class="fa-solid fa-cloud-sun"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-white/80 text-xs font-semibold text-slate-500">
+                            <i class="fa-regular fa-clock mr-1 text-sky-400"></i>70 Menit
+                        </span>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-sky-400">Facial & Glow</span>
+                    <h3 class="text-xl font-bold text-slate-800 mt-1">Cryo Ice Lifting Facial</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        Sensasi dingin menyegarkan untuk mengecilkan tampilan pori, meredakan kemerahan, dan mengencangkan kontur wajah.
+                    </p>
+                </div>
+                <div class="pt-6 mt-6 border-t border-white/60 flex items-center justify-between">
+                    <div>
+                        <span class="text-[11px] text-slate-400 block">Mulai dari</span>
+                        <span class="text-lg font-bold text-slate-800">Rp 480.000</span>
+                    </div>
+                    <button onclick="selectTreatment('Cryo Ice Lifting Facial')" class="btn-pastel px-4 py-2 rounded-full text-xs font-semibold">
+                        Pilih Paket
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. FORM RESERVASI INTERAKTIF -->
+    <section id="reservasi" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal">
+        <div class="liquid-glass rounded-[2.5rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Informasi Promo & Ajakan -->
+                <div class="lg:col-span-5 space-y-5">
+                    <span class="inline-block px-3.5 py-1.5 rounded-full bg-gradient-to-r from-pink-200/80 to-sky-200/80 text-slate-700 text-xs font-bold">
+                        ✨ Promo Kunjungan Pertama
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">
+                        Jadwalkan Sesi <span class="text-pink-500">Me-Time</span> Anda Sekarang
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Dapatkan <strong>Diskon 20%</strong> untuk perawatan pertama serta gratis analisis kulit 3D bersama dokter estetika kami. Tanpa antre, langsung dilayani sesuai jadwal pilihanmu!
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center gap-3 text-sm text-slate-600">
+                            <div class="w-8 h-8 rounded-full bg-pink-100 text-pink-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span>Konfirmasi jadwal instan tanpa biaya admin</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-600">
+                            <div class="w-8 h-8 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span>Fleksibel ubah jadwal hingga H-1 kunjungan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Booking Glass -->
+                <div class="lg:col-span-7">
+                    <form id="booking-form" class="bg-white/60 backdrop-blur-md p-6 sm:p-8 rounded-[2rem] border border-white/80 shadow-sm space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="client-name" class="block text-xs font-semibold text-slate-700 mb-1.5">Nama Lengkap</label>
+                                <input type="text" id="client-name" required placeholder="Contoh: Clarissa Putri" 
+                                    class="w-full px-4 py-3 rounded-xl bg-white/80 border border-pink-100 focus:border-pink-400 focus:ring-2 focus:ring-pink-200 outline-none text-sm transition-all">
+                            </div>
+                            <div>
+                                <label for="client-phone" class="block text-xs font-semibold text-slate-700 mb-1.5">Nomor WhatsApp</label>
+                                <input type="tel" id="client-phone" required placeholder="0812-3456-7890" 
+                                    class="w-full px-4 py-3 rounded-xl bg-white/80 border border-sky-100 focus:border-sky-400 focus:ring-2 focus:ring-sky-200 outline-none text-sm transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="treatment-select" class="block text-xs font-semibold text-slate-700 mb-1.5">Pilih Jenis Perawatan</label>
+                            <select id="treatment-select" required 
+                                class="w-full px-4 py-3 rounded-xl bg-white/80 border border-pink-100 focus:border-pink-400 focus:ring-2 focus:ring-pink-200 outline-none text-sm transition-all text-slate-700">
+                                <option value="Hydra Glass Facial">Hydra Glass Facial (Rp 350.000)</option>
+                                <option value="Pink Laser Rejuvenation">Pink Laser Rejuvenation (Rp 650.000)</option>
+                                <option value="Blue Light Acne Therapy">Blue Light Acne Therapy (Rp 420.000)</option>
+                                <option value="Aqua Peel & Glow">Aqua Peel & Glow (Rp 390.000)</option>
+                                <option value="Salmon DNA Skin Booster">Salmon DNA Skin Booster (Rp 1.250.000)</option>
+                                <option value="Cryo Ice Lifting Facial">Cryo Ice Lifting Facial (Rp 480.000)</option>
+                                <option value="Konsultasi Dokter & 3D Skin Check">Konsultasi Dokter & 3D Skin Check (Gratis)</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="booking-date" class="block text-xs font-semibold text-slate-700 mb-1.5">Tanggal Kunjungan</label>
+                                <input type="date" id="booking-date" required 
+                                    class="w-full px-4 py-3 rounded-xl bg-white/80 border border-sky-100 focus:border-sky-400 focus:ring-2 focus:ring-sky-200 outline-none text-sm transition-all text-slate-700">
+                            </div>
+                            <div>
+                                <label for="booking-time" class="block text-xs font-semibold text-slate-700 mb-1.5">Jam Sesi</label>
+                                <select id="booking-time" required 
+                                    class="w-full px-4 py-3 rounded-xl bg-white/80 border border-pink-100 focus:border-pink-400 focus:ring-2 focus:ring-pink-200 outline-none text-sm transition-all text-slate-700">
+                                    <option value="10:00 WIB">10:00 WIB (Pagi)</option>
+                                    <option value="13:00 WIB">13:00 WIB (Siang)</option>
+                                    <option value="15:30 WIB">15:30 WIB (Sore)</option>
+                                    <option value="18:00 WIB">18:00 WIB (Malam)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-pastel w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 mt-2">
+                            <i class="fa-solid fa-sparkles"></i>
+                            <span>Konfirmasi Reservasi Sekarang</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. TESTIMONI PELANGGAN -->
+    <section id="testimoni" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-bold uppercase tracking-widest text-pink-500 bg-pink-100/70 px-3.5 py-1.5 rounded-full">
+                Cerita Sahabat AuraGlow
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 mt-3">
+                Apa Kata Mereka Tentang Kami?
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Review 1 -->
+            <div class="liquid-glass p-6 rounded-[1.8rem] space-y-4">
+                <div class="flex text-amber-400 text-xs gap-1">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-sm text-slate-600 italic leading-relaxed">
+                    "Kliniknya aesthetic banget, nuansa pink birunya bikin tenang! Habis coba Hydra Glass Facial kulit langsung terasa kenyal dan cerah seketika tanpa merah-merah."
+                </p>
+                <div class="flex items-center gap-3 pt-2">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Nadia" class="w-10 h-10 rounded-full object-cover border-2 border-white">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800">Nadia Maharani</h4>
+                        <p class="text-[11px] text-slate-400">Hydra Glass Facial</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="liquid-glass p-6 rounded-[1.8rem] space-y-4">
+                <div class="flex text-amber-400 text-xs gap-1">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-sm text-slate-600 italic leading-relaxed">
+                    "Dokternya ramah banget dan nggak maksa beli produk macam-macam. Dijelasin detail kondisi kulitku lewat skin analyzer. Blue Light Therapy-nya ampuh meredakan jerawat!"
+                </p>
+                <div class="flex items-center gap-3 pt-2">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="Alya" class="w-10 h-10 rounded-full object-cover border-2 border-white">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800">Alya Kinanti</h4>
+                        <p class="text-[11px] text-slate-400">Blue Light Acne Therapy</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="liquid-glass p-6 rounded-[1.8rem] space-y-4">
+                <div class="flex text-amber-400 text-xs gap-1">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-sm text-slate-600 italic leading-relaxed">
+                    "Tempat favorit buat me-time akhir pekan. Wangi ruangannya menenangkan, terapisnya telaten, dan hasilnya beneran glass skin alami. Pasti balik lagi bulan depan!"
+                </p>
+                <div class="flex items-center gap-3 pt-2">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80" alt="Bella" class="w-10 h-10 rounded-full object-cover border-2 border-white">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800">Bella Saphira</h4>
+                        <p class="text-[11px] text-slate-400">Pink Laser Rejuvenation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & INFO KLINIK -->
+    <footer class="mt-12 border-t border-white/80 bg-white/50 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Brand -->
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-pink-300 to-sky-300 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-sparkles"></i>
+                        </div>
+                        <span class="font-serif text-2xl font-bold bg-gradient-to-r from-pink-500 to-sky-500 bg-clip-text text-transparent">
+                            AuraGlow
+                        </span>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Klinik kecantikan modern dengan pendekatan lembut, personal, dan berbasis medis untuk mewujudkan kulit sehat bercahaya impianmu.
+                    </p>
+                </div>
+
+                <!-- Jam Operasional -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-slate-800 uppercase tracking-wider">Jam Operasional</h4>
+                    <ul class="text-sm text-slate-600 space-y-1.5">
+                        <li class="flex justify-between max-w-xs"><span>Senin – Jumat</span><span class="font-semibold">09.00 – 20.00 WIB</span></li>
+                        <li class="flex justify-between max-w-xs"><span>Sabtu – Minggu</span><span class="font-semibold">09.00 – 18.00 WIB</span></li>
+                        <li class="text-xs text-pink-500 pt-1">*Hari Libur Nasional tetap buka dengan janji temu</li>
+                    </ul>
+                </div>
+
+                <!-- Alamat & Kontak -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-slate-800 uppercase tracking-wider">Lokasi & Kontak</h4>
+                    <p class="text-sm text-slate-600 flex items-start gap-2.5">
+                        <i class="fa-solid fa-location-dot text-pink-400 mt-1"></i>
+                        <span>Jl. Melati Pastel No. 28, Kebayoran Baru, Jakarta Selatan</span>
+                    </p>
+                    <p class="text-sm text-slate-600 flex items-center gap-2.5">
+                        <i class="fa-brands fa-whatsapp text-sky-500"></i>
+                        <span>+62 812-8899-2026</span>
+                    </p>
+                    <div class="flex gap-3 pt-2">
+                        <a href="#beranda" aria-label="Instagram" class="w-9 h-9 rounded-full liquid-glass flex items-center justify-center text-pink-500 hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#beranda" aria-label="TikTok" class="w-9 h-9 rounded-full liquid-glass flex items-center justify-center text-sky-500 hover:scale-110"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#beranda" aria-label="WhatsApp" class="w-9 h-9 rounded-full liquid-glass flex items-center justify-center text-pink-500 hover:scale-110"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/80 mt-10 pt-6 text-center text-xs text-slate-400">
+                &copy; 2026 AuraGlow Aesthetic Clinic. Seluruh Hak Cipta Dilindungi.
+            </div>
+        </div>
+    </footer>
+
+    <!-- NOTIFIKASI TOAST / MODAL KONFIRMASI RESERVASI -->
+    <div id="booking-toast" class="fixed bottom-6 right-6 left-6 sm:left-auto sm:w-96 z-50 transform translate-y-32 opacity-0 pointer-events-none transition-all duration-500">
+        <div class="liquid-glass p-5 rounded-3xl border-2 border-white shadow-2xl bg-white/85">
+            <div class="flex items-start gap-3.5">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-pink-400 to-sky-400 text-white flex items-center justify-center shrink-0 shadow-md">
+                    <i class="fa-solid fa-circle-check text-xl"></i>
+                </div>
+                <div class="flex-1">
+                    <h4 class="font-bold text-slate-800 text-sm">Reservasi Berhasil! ✨</h4>
+                    <p id="toast-message" class="text-xs text-slate-600 mt-1 leading-relaxed">
+                        Jadwal perawatan Anda telah kami catat.
+                    </p>
+                </div>
+                <button id="close-toast" class="text-slate-400 hover:text-slate-600 p-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT INTERAKTIF -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Tutup menu mobile saat link diklik
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+
+            // 2. Logika Photo Slider / Carousel Klinik
+            const track = document.getElementById('slider-track');
+            const slides = Array.from(track.children);
+            const nextBtn = document.getElementById('next-slide');
+            const prevBtn = document.getElementById('prev-slide');
+            const dotsContainer = document.getElementById('slider-dots');
+            const carouselContainer = document.getElementById('clinic-carousel');
+
+            let currentIndex = 0;
+            let autoPlayInterval;
+
+            // Buat indikator dots sesuai jumlah slide
+            slides.forEach((_, idx) => {
+                const dot = document.createElement('button');
+                dot.ariaLabel = `Slide ${idx + 1}`;
+                dot.className = `h-2.5 rounded-full transition-all duration-300 ${idx === 0 ? 'w-8 bg-gradient-to-r from-pink-400 to-sky-400' : 'w-2.5 bg-slate-300/80 hover:bg-pink-300'}`;
+                dot.addEventListener('click', () => goToSlide(idx));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = Array.from(dotsContainer.children);
+
+            function updateSlider() {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                dots.forEach((dot, idx) => {
+                    if (idx === currentIndex) {
+                        dot.className = 'h-2.5 w-8 rounded-full transition-all duration-300 bg-gradient-to-r from-pink-400 to-sky-400';
+                    } else {
+                        dot.className = 'h-2.5 w-2.5 rounded-full transition-all duration-300 bg-slate-300/80 hover:bg-pink-300';
+                    }
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = (index + slides.length) % slides.length;
+                updateSlider();
+            }
+
+            nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+            prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+
+            // Auto-play dengan pause saat hover
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(() => {
+                    goToSlide(currentIndex + 1);
+                }, 4500);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+            carouselContainer.addEventListener('mouseleave', startAutoPlay);
+            startAutoPlay();
+
+            // 3. Filter Kategori Layanan
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const treatmentCards = document.querySelectorAll('.treatment-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Reset tampilan semua tombol filter
+                    filterBtns.forEach(b => {
+                        b.className = 'filter-btn liquid-glass px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-slate-600 hover:text-pink-500 transition-all';
+                    });
+                    // Aktifkan tombol yang diklik
+                    btn.className = 'filter-btn active px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-gradient-to-r from-pink-400 to-sky-400 text-white shadow-sm';
+
+                    const category = btn.getAttribute('data-filter');
+                    treatmentCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'flex';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 20);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.95)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 250);
+                        }
+                    });
+                });
+            });
+
+            // 4. Set Tanggal Minimum Booking Hari Ini
+            const dateInput = document.getElementById('booking-date');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+            dateInput.value = today;
+
+            // 5. Simulasi Form Reservasi & Toast Notifikasi
+            const bookingForm = document.getElementById('booking-form');
+            const toast = document.getElementById('booking-toast');
+            const toastMessage = document.getElementById('toast-message');
+            const closeToastBtn = document.getElementById('close-toast');
+            let toastTimeout;
+
+            function showToast(htmlText) {
+                toastMessage.innerHTML = htmlText;
+                toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    hideToast();
+                }, 6500);
+            }
+
+            function hideToast() {
+                toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+            }
+
+            closeToastBtn.addEventListener('click', hideToast);
+
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('client-name').value.trim();
+                const treatment = document.getElementById('treatment-select').value;
+                const date = document.getElementById('booking-date').value;
+                const time = document.getElementById('booking-time').value;
+
+                showToast(
+                    `Terima kasih, <strong>${name}</strong>! Sesi <strong>${treatment}</strong> pada tanggal <strong>${date}</strong> pukul <strong>${time}</strong> telah terkonfirmasi.`
+                );
+                bookingForm.reset();
+                dateInput.value = today;
+            });
+
+            // 6. Animasi Reveal saat Scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
+
+        // Fungsi Helper saat Tombol "Pilih Paket" pada Kartu Layanan Diklik
+        function selectTreatment(treatmentName) {
+            const selectEl = document.getElementById('treatment-select');
+            selectEl.value = treatmentName;
+            document.getElementById('reservasi').scrollIntoView({ behavior: 'smooth' });
+            
+            // Beri sorotan ringan pada dropdown
+            selectEl.classList.add('ring-4', 'ring-pink-300');
+            setTimeout(() => {
+                selectEl.classList.remove('ring-4', 'ring-pink-300');
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
